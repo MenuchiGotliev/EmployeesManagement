@@ -1,0 +1,84 @@
+<h1 mat-dialog-title>Add Employee</h1>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="employeeForm">
+    <mat-form-field >
+      <mat-label for="identity">Identity</mat-label>
+      <input matInput formControlName="identity" type="text" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label for="firstName">First Name</mat-label>
+      <input matInput formControlName="firstName" type="text" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label for="lastName">Last Name</mat-label>
+      <input matInput formControlName="lastName" type="text" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label for="entryDate">Entry Date</mat-label>
+      <input matInput [matDatepicker]="entryDatePicker" formControlName="entryDate"  required>
+      <mat-datepicker-toggle matSuffix [for]="entryDatePicker"></mat-datepicker-toggle>
+      <mat-datepicker #entryDatePicker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label for="birthDate">Birth Date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="birthDate"  required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label for="gender">Gender</mat-label>
+      <mat-select placeholder="Gender" formControlName="gender" required>
+        <mat-option [value]="0">Male</mat-option>
+        <mat-option [value]="1">Female</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <form formArrayName="positions">
+      <div *ngFor="let position of positions.controls; let i = index">
+        <div [formGroupName]="i">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>Position {{ i + 1 }}</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+
+              <mat-form-field appearance="fill">
+                <mat-label for="positionId">Position ID</mat-label>
+                <input matInput formControlName="positionId" type="text" id="positionId" required>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label for="startDate">Start Date</mat-label>
+                <input matInput [matDatepicker]="startDatePicker" formControlName="startDate" required>
+                <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+                <mat-datepicker #startDatePicker></mat-datepicker>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label for="isManagement">Is Management</mat-label>
+                <mat-select formControlName="isManagement" required>
+                  <mat-option [value]="true">True</mat-option>
+                  <mat-option [value]="false">False</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <button mat-button type="button" (click)="removePosition(i)">Remove</button>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </form>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button type="button" (click)="addPosition()">Add Position</button>
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button (click)="onSubmit()">Add</button>
+</mat-dialog-actions>
