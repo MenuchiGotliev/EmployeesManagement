@@ -1,0 +1,35 @@
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Service\bin\Debug\net8.0\EmployeeServer.Service.deps.json
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Service\bin\Debug\net8.0\EmployeeServer.Service.dll
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Service\bin\Debug\net8.0\EmployeeServer.Service.pdb
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Service\obj\Debug\net8.0\EmployeeServer.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Service\obj\Debug\net8.0\EmployeeServer.Service.AssemblyInfoInputs.cache
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Service\obj\Debug\net8.0\EmployeeServer.Service.AssemblyInfo.cs
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Service\obj\Debug\net8.0\EmployeeServer.Service.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Service\obj\Debug\net8.0\EmployeeServer.Service.dll
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Service\obj\Debug\net8.0\refint\EmployeeServer.Service.dll
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Service\obj\Debug\net8.0\EmployeeServer.Service.pdb
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Service\obj\Debug\net8.0\ref\EmployeeServer.Service.dll
+C:\Users\User\Downloads\EmployeePositionProject-main\EmployeeServer\EmployeeServer.Service\bin\Debug\net8.0\EmployeeServer.Service.deps.json
+C:\Users\User\Downloads\EmployeePositionProject-main\EmployeeServer\EmployeeServer.Service\bin\Debug\net8.0\EmployeeServer.Service.dll
+C:\Users\User\Downloads\EmployeePositionProject-main\EmployeeServer\EmployeeServer.Service\bin\Debug\net8.0\EmployeeServer.Service.pdb
+C:\Users\User\Downloads\EmployeePositionProject-main\EmployeeServer\EmployeeServer.Service\bin\Debug\net8.0\EmployeeServer.Core.dll
+C:\Users\User\Downloads\EmployeePositionProject-main\EmployeeServer\EmployeeServer.Service\bin\Debug\net8.0\EmployeeServer.Core.pdb
+C:\Users\User\Downloads\EmployeePositionProject-main\EmployeeServer\EmployeeServer.Service\obj\Debug\net8.0\EmployeeServer.Service.csproj.AssemblyReference.cache
+C:\Users\User\Downloads\EmployeePositionProject-main\EmployeeServer\EmployeeServer.Service\obj\Debug\net8.0\EmployeeServer.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Downloads\EmployeePositionProject-main\EmployeeServer\EmployeeServer.Service\obj\Debug\net8.0\EmployeeServer.Service.AssemblyInfoInputs.cache
+C:\Users\User\Downloads\EmployeePositionProject-main\EmployeeServer\EmployeeServer.Service\obj\Debug\net8.0\EmployeeServer.Service.AssemblyInfo.cs
+C:\Users\User\Downloads\EmployeePositionProject-main\EmployeeServer\EmployeeServer.Service\obj\Debug\net8.0\EmployeeServer.Service.csproj.CoreCompileInputs.cache
+C:\Users\User\Downloads\EmployeePositionProject-main\EmployeeServer\EmployeeServer.Service\obj\Debug\net8.0\Employee.175CB2F4.Up2Date
+C:\Users\User\Downloads\EmployeePositionProject-main\EmployeeServer\EmployeeServer.Service\obj\Debug\net8.0\EmployeeServer.Service.dll
+C:\Users\User\Downloads\EmployeePositionProject-main\EmployeeServer\EmployeeServer.Service\obj\Debug\net8.0\refint\EmployeeServer.Service.dll
+C:\Users\User\Downloads\EmployeePositionProject-main\EmployeeServer\EmployeeServer.Service\obj\Debug\net8.0\EmployeeServer.Service.pdb
+C:\Users\User\Downloads\EmployeePositionProject-main\EmployeeServer\EmployeeServer.Service\obj\Debug\net8.0\ref\EmployeeServer.Service.dll
+C:\Users\User\Downloads\EmployeePositionProject-main\EmployeeServer\EmployeeServer.Service\bin\Debug\net8.0\EmployeeServer.Data.dll
+C:\Users\User\Downloads\EmployeePositionProject-main\EmployeeServer\EmployeeServer.Service\bin\Debug\net8.0\EmployeeServer.Data.pdb
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Service\bin\Debug\net8.0\EmployeeServer.Core.dll
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Service\bin\Debug\net8.0\EmployeeServer.Data.dll
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Service\bin\Debug\net8.0\EmployeeServer.Core.pdb
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Service\bin\Debug\net8.0\EmployeeServer.Data.pdb
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Service\obj\Debug\net8.0\EmployeeServer.Service.csproj.AssemblyReference.cache
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Service\obj\Debug\net8.0\EmployeeServer.Service.sourcelink.json
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Service\obj\Debug\net8.0\Employee.175CB2F4.Up2Date
