@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace EmployeeServer.Data.Repositories
 {
@@ -16,33 +17,38 @@ namespace EmployeeServer.Data.Repositories
         {
             _dataContext = context;
         }
-        public async Task<IEnumerable<EmployeePosition>> AddPositionToEmployeeAsync(IEnumerable<EmployeePosition> employeePositions)
+        public async Task<EmployeePosition> AddPositionToEmployeeAsync(EmployeePosition employeePosition)
         {
-            foreach (var employeePosition in employeePositions)
-            {
-                await _dataContext.EmployeePositions.AddAsync(employeePosition);
-                _dataContext.SaveChanges();
+            //האם התפקיד כבר קים אבל לא פעיל(מחוק 
+            var position = await _dataContext.EmployeePositions.FirstOrDefaultAsync(e => employeePosition.PositionId == e.PositionId && e.EmployeeId == employeePosition.EmployeeId && e.EmployeePositionStatus == false);
+            if (position != null)
+            {                     
+                position.EmployeePositionStatus = true;
+                var updatePosition = await UpdatePositionToEmployeeAsync(employeePosition.EmployeeId,employeePosition);
+                await _dataContext.SaveChangesAsync();
+                return updatePosition;
 
             }
-            return employeePositions;
+            await _dataContext.EmployeePositions.AddAsync(employeePosition);
+            await _dataContext.SaveChangesAsync();
 
-          
+            return employeePosition;
+
+
         }
-        public async Task<IEnumerable<EmployeePosition>> UpdatePositionToEmployeeAsync(int empoyeeId, IEnumerable<EmployeePosition> employeePositions)
+        public async Task<EmployeePosition> UpdatePositionToEmployeeAsync(int empoyeeId,EmployeePosition employeePosition)
         {
-            foreach (var employeePosition in employeePositions)
-            {
+              
                 var position = await _dataContext.EmployeePositions.FirstOrDefaultAsync(e => employeePosition.PositionId == e.PositionId && e.EmployeeId == empoyeeId);
                 if (position == null)
                 {
-                    return null;
+                return null;
                 }
                 position.IsManagement = employeePosition.IsManagement;
                 position.StartDate = employeePosition.StartDate;
                 await _dataContext.SaveChangesAsync();
                 
-            }
-           return employeePositions;
+                return position;
         }
 
         public async Task<bool> DeletePositionOfEmployeeAsync(int employeeId, int positionId)

@@ -9,8 +9,8 @@ namespace EmployeeServer.Core.Repositories
 {
     public interface IEmployeePositionRepository
     {
-        Task<IEnumerable<EmployeePosition>> AddPositionToEmployeeAsync(IEnumerable<EmployeePosition> employeePositions);
-        Task<IEnumerable<EmployeePosition>> UpdatePositionToEmployeeAsync(int empoyeeId, IEnumerable<EmployeePosition> employeePositions);
+        Task<EmployeePosition> AddPositionToEmployeeAsync(EmployeePosition employeePosition);
+        Task<EmployeePosition> UpdatePositionToEmployeeAsync(int empoyeeId, EmployeePosition employeePosition);
         Task<IEnumerable<EmployeePosition>> GetEmployeePositionsAsync(int employeeId);
         Task<bool> DeletePositionOfEmployeeAsync(int employeeId, int positionId);
 

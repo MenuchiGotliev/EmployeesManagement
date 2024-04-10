@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { EmployeePosition } from '../../models/employee-position.model';
 import { EmployeeService } from '../../services/employee.service';
 import { MatInputModule } from '@angular/material/input';
@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { EmployeePositionService } from '../../services/employee-position.service';
+import { Employee } from '../../models/employee.model';
 @Component({
   selector: 'app-add-employee-position',
   imports: [MatDialogModule,CommonModule, ReactiveFormsModule],//,MatInputModule,MatButtonModule,MatFormFieldModule,MatDatepickerModule],
@@ -17,6 +18,7 @@ import { EmployeePositionService } from '../../services/employee-position.servic
   ,standalone: true
 })
 export class AddEmployeePositionComponent implements OnInit {
+ 
   positionForm: FormGroup;
 
   constructor(
@@ -34,6 +36,8 @@ export class AddEmployeePositionComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
+    
   }
 
   onSubmit(): void {

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NIgpAOWGrNXBb8Oohj/Yffr6XRzEhUsJWZHw/qF02OsgSB3qBwIB7f3g87bjy1WkRKqrsar9r2zl5+Y+MZwlqg==",
+  "dgSpecHash": "92ZGjfoOOkGC5HwXNWVRs8mX6XssBs67z2ga13NYl2qNHjZY+ZOLQtYMr80G4JrTJOfKPo/0feneGY+iQjANGQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\User\\Documents\\תכנות מקצועות\\פרקטיקום\\EmployeeServer\\EmployeeServer.Core\\EmployeeServer.Core.csproj",
+  "projectFilePath": "C:\\Users\\User\\Desktop\\EmployeesManagement\\EmployeeServer\\EmployeeServer.Core\\EmployeeServer.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

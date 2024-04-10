@@ -1,35 +1,42 @@
-<h1 mat-dialog-title>Add Employee</h1>
+<div><h1 mat-dialog-title>Add Employee</h1>
 <mat-dialog-content class="mat-typography">
   <form [formGroup]="employeeForm">
-    <mat-form-field >
+    <mat-form-field>
       <mat-label for="identity">Identity</mat-label>
       <input matInput formControlName="identity" type="text" required>
+      <mat-error *ngIf="employeeForm.get('identity').hasError('pattern')">
+        *Invalid identity format. Please enter 9 digits.
+      </mat-error>
+      
     </mat-form-field>
-
     <mat-form-field>
       <mat-label for="firstName">First Name</mat-label>
       <input matInput formControlName="firstName" type="text" required>
     </mat-form-field>
-
+    
     <mat-form-field>
       <mat-label for="lastName">Last Name</mat-label>
       <input matInput formControlName="lastName" type="text" required>
     </mat-form-field>
-
+    
     <mat-form-field>
       <mat-label for="entryDate">Entry Date</mat-label>
       <input matInput [matDatepicker]="entryDatePicker" formControlName="entryDate"  required>
       <mat-datepicker-toggle matSuffix [for]="entryDatePicker"></mat-datepicker-toggle>
       <mat-datepicker #entryDatePicker></mat-datepicker>
+      
     </mat-form-field>
-
+    
     <mat-form-field>
       <mat-label for="birthDate">Birth Date</mat-label>
-      <input matInput [matDatepicker]="picker" formControlName="birthDate"  required>
+      <input matInput [matDatepicker]="picker" formControlName="birthDate" required>
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="employeeForm.get('birthDate').hasError('underSixteen')">
+        *You must be at least 16 years old
+      </mat-error>
     </mat-form-field>
-
+    
     <mat-form-field>
       <mat-label for="gender">Gender</mat-label>
       <mat-select placeholder="Gender" formControlName="gender" required>
@@ -37,7 +44,7 @@
         <mat-option [value]="1">Female</mat-option>
       </mat-select>
     </mat-form-field>
-
+    
     <form formArrayName="positions">
       <div *ngFor="let position of positions.controls; let i = index">
         <div [formGroupName]="i">
@@ -45,21 +52,27 @@
             <mat-card-header>
               <mat-card-title>Position {{ i + 1 }}</mat-card-title>
             </mat-card-header>
-
+            
             <mat-card-content>
 
               <mat-form-field appearance="fill">
-                <mat-label for="positionId">Position ID</mat-label>
-                <input matInput formControlName="positionId" type="text" id="positionId" required>
+                <mat-label for="positionId">Choose Position</mat-label>
+                <mat-select formControlName="positionId" required>
+                  <mat-option *ngFor="let position of positionslist" [value]="position.id" [disabled]="isPositionSelected(position.id)">
+                    {{ position.name }} 
+                  </mat-option>
+                </mat-select>
               </mat-form-field>
-
+              
+              
               <mat-form-field>
                 <mat-label for="startDate">Start Date</mat-label>
                 <input matInput [matDatepicker]="startDatePicker" formControlName="startDate" required>
                 <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
                 <mat-datepicker #startDatePicker></mat-datepicker>
+                <mat-error *ngIf="validateEntryDate"> *start date must be after entry date </mat-error>
               </mat-form-field>
-
+              
               <mat-form-field>
                 <mat-label for="isManagement">Is Management</mat-label>
                 <mat-select formControlName="isManagement" required>
@@ -67,8 +80,8 @@
                   <mat-option [value]="false">False</mat-option>
                 </mat-select>
               </mat-form-field>
-
-              <button mat-button type="button" (click)="removePosition(i)">Remove</button>
+             
+              <button mat-button type="button" (click)="removePosition(i)"> <mat-icon >delete</mat-icon>Remove</button>
             </mat-card-content>
           </mat-card>
         </div>
@@ -78,7 +91,9 @@
 </mat-dialog-content>
 
 <mat-dialog-actions>
-  <button mat-button type="button" (click)="addPosition()">Add Position</button>
+  <button mat-button type="button" (click)="addPosition()"><mat-icon>add</mat-icon>Add Position</button>
   <button mat-button mat-dialog-close>Cancel</button>
   <button mat-button (click)="onSubmit()">Add</button>
 </mat-dialog-actions>
+
+</div>

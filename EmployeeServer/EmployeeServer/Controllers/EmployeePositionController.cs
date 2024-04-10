@@ -2,6 +2,7 @@
 using EmployeeServer.Core.DTOs;
 using EmployeeServer.Core.Entities;
 using EmployeeServer.Core.Services;
+using EmployeeServer.Data.Migrations;
 using EmployeeServer.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -29,14 +30,17 @@ namespace EmployeeServer.Controllers
             return await _employeePositionService.GetEmployeePositionsAsync(employeeId);
         }
        
-
-
         // POST api/<EmployeePositionController>
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] IEnumerable< EmployeePositionPostModel> value)
         {
-            var newEmployee = await _employeePositionService.AddPositionToEmployeeAsync(_mapper.Map< IEnumerable<EmployeePosition>>(value));
-            return Ok(_mapper.Map<IEnumerable<EmployeePositionDto>>(newEmployee));
+            
+            var newEmployees = await _employeePositionService.AddPositionToEmployeeAsync(_mapper.Map< IEnumerable<EmployeePosition>>(value));
+            if(newEmployees == null)
+            {
+                return NotFound();
+            }
+            return Ok(_mapper.Map<IEnumerable<EmployeePositionDto>>(newEmployees));
         }
 
         // PUT api/<EmployeePositionController>/5

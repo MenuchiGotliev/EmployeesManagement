@@ -12,16 +12,19 @@ import * as XLSX from 'xlsx';
 import { DatePipe } from '@angular/common';
 import { AddEmployeeComponent } from '../add-employee/add-employee.component';
 import { EditEmployeeComponent } from '../edit-employee/edit-employee.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 @Component({
   selector: 'app-employee-table',
   standalone: true,
   imports: [DatePipe,MatFormFieldModule, 
-    MatInputModule, MatTableModule,MatIconModule,MatButtonModule,  MatDialogModule,
+    MatInputModule, MatTableModule,MatIconModule,MatButtonModule,  MatDialogModule, MatToolbarModule
+   
    ],
   templateUrl: './employee-list.component.html',
   styleUrl: './employee-list.component.scss',
 
 })
+
 
 export class EmployeeListComponent implements OnInit {
   employees?: Employee[]
@@ -31,7 +34,7 @@ export class EmployeeListComponent implements OnInit {
   displayedColumns: string[] = ['identity','firstName', 'lastName','entryDate','options'];
   constructor(private router: Router, private _employeeService: EmployeeService,public dialog: MatDialog) { }
 
-
+ 
   
   ngOnInit(): void {
     this.initEmployees()
@@ -44,9 +47,10 @@ initEmployees(): void{
     console.log(this.employees)
   });
 }
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+  applyFilter(event: KeyboardEvent) {
+    const filterValue = (event.target as HTMLInputElement).value.trim().toLowerCase();
+    this.dataSource.filter = filterValue;
   }
   editEmployee(id:number){
     const dialogRef = this.dialog.open(EditEmployeeComponent, {
@@ -64,10 +68,13 @@ initEmployees(): void{
 
   openDialog() {
     const dialogRef = this.dialog.open(AddEmployeeComponent, {
-      width: '450px',
+      width: '450px'
+     
     });
 
-    dialogRef.afterClosed().subscribe();
+    dialogRef.afterClosed().subscribe((res)=>{
+        this.initEmployees();
+    });
  
   }
   downloadExcel(): void {
